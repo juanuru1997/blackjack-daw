@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blackjack</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="modal-nombre" class="modal">
+    <div class="modal-caja">
+      <h2>Blackjack</h2>
+      <p>Introduce tu nombre para sentarte en la mesa</p>
+      <form id="form-nombre">
+        <label for="input-nombre">Nombre</label>
+        <input id="input-nombre" type="text" maxlength="20" autocomplete="nickname" placeholder="Tu nombre">
+        <button type="submit">Empezar partida</button>
+      </form>
+    </div>
+  </div>
+
+  <header class="cabecera">
+    <h1>Blackjack</h1>
+  </header>
+
+  <main>
+    <section class="mesa">
+      <section id="banca" class="zona">
+        <h2>Banca</h2>
+        <p class="puntuacion">Puntuación: <span id="puntos-banca">0</span></p>
+        <div id="cartas-banca" class="cartas"></div>
+      </section>
+
+      <section id="zona-mensajes" class="mensajes">
+        <p id="mensaje">Preparando la partida...</p>
+      </section>
+
+      <section id="jugador" class="zona">
+        <h2 id="nombre-jugador">Jugador</h2>
+        <p class="puntuacion">Puntuación: <span id="puntos-jugador">0</span></p>
+        <div id="cartas-jugador" class="cartas"></div>
+      </section>
+
+      <div class="controles">
+        <button id="btn-pedir" type="button">Pedir carta</button>
+        <button id="btn-plantarse" type="button">Plantarse</button>
+        <button id="btn-nueva" type="button">Nueva partida</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

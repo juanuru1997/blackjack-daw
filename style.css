@@ -1,0 +1,297 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #f6ecd4;
+  background: #07140e;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(4, 12, 8, 0.82);
+}
+
+.modal.oculto {
+  display: none;
+}
+
+.modal-caja {
+  width: 100%;
+  max-width: 380px;
+  padding: 2rem 1.6rem 1.7rem;
+  text-align: center;
+  background: radial-gradient(ellipse at center, #1a6b3d 0%, #0d4024 70%, #082818 100%);
+  border: 3px solid #e8c56b;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  animation: aparecer-modal 0.35s ease;
+}
+
+.modal-caja h2 {
+  margin-bottom: 0.55rem;
+  font-size: 1.8rem;
+  font-weight: normal;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #e8c56b;
+}
+
+.modal-caja p {
+  margin-bottom: 1.3rem;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: #f6ecd4;
+}
+
+#form-nombre {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  text-align: left;
+}
+
+#form-nombre label {
+  font-size: 0.95rem;
+  color: #f0d78c;
+}
+
+#input-nombre {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  color: #1c1c1c;
+  background: #fffef8;
+  border: 2px solid #c9a227;
+  border-radius: 8px;
+}
+
+#input-nombre:focus {
+  outline: 2px solid #e8c56b;
+  outline-offset: 2px;
+}
+
+#form-nombre button {
+  margin-top: 0.4rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  padding: 0.75rem 1.2rem;
+  color: #10291c;
+  background: #e8c56b;
+  border: 2px solid #f0d78c;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#form-nombre button:hover {
+  background: #f0d78c;
+}
+
+@keyframes aparecer-modal {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.cabecera {
+  text-align: center;
+  padding: 1.4rem 1rem 0.2rem;
+}
+
+.cabecera h1 {
+  font-size: 2.5rem;
+  font-weight: normal;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #e8c56b;
+}
+
+.mesa {
+  max-width: 920px;
+  margin: 1rem auto 2rem;
+  padding: 2rem 4.5rem 2.2rem;
+  background: radial-gradient(ellipse at center, #217843 0%, #0e5a30 58%, #084024 100%);
+  border: 6px solid #c9a227;
+  border-radius: 160px;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.35), 0 14px 28px rgba(0, 0, 0, 0.45);
+}
+
+.zona {
+  text-align: center;
+  margin: 0.6rem 0;
+}
+
+.zona h2 {
+  font-size: 1.45rem;
+  font-weight: normal;
+  letter-spacing: 0.08em;
+  color: #f0d78c;
+}
+
+.puntuacion {
+  margin-top: 0.3rem;
+  font-size: 1.05rem;
+}
+
+.cartas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 120px;
+  margin-top: 0.85rem;
+}
+
+.carta {
+  position: relative;
+  width: 80px;
+  height: 114px;
+  background: #fffef8;
+  color: #1c1c1c;
+  border: 1px solid #ddd4c0;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carta .palo {
+  font-size: 2.1rem;
+  line-height: 1;
+}
+
+.carta .esquina {
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.carta.roja {
+  color: #c0392b;
+}
+
+.mensajes {
+  max-width: 28rem;
+  min-height: 3rem;
+  margin: 1.1rem auto;
+  padding: 0.7rem 1rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(232, 197, 107, 0.75);
+  border-radius: 8px;
+}
+
+#mensaje {
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.controles {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.1rem;
+}
+
+.controles button {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  padding: 0.7rem 1.5rem;
+  color: #f6ecd4;
+  background: #10291c;
+  border: 2px solid #e8c56b;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.controles button:hover {
+  color: #10291c;
+  background: #e8c56b;
+}
+
+.controles button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.controles button:disabled:hover {
+  color: #f6ecd4;
+  background: #10291c;
+}
+
+.controles button:focus-visible {
+  outline: 2px solid #fff8e6;
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .cabecera h1 {
+    font-size: 1.7rem;
+    letter-spacing: 0.14em;
+  }
+
+  .mesa {
+    margin: 0.8rem;
+    padding: 1.2rem 1rem 1.4rem;
+    border-width: 4px;
+    border-radius: 28px;
+  }
+
+  .zona h2 {
+    font-size: 1.25rem;
+  }
+
+  .cartas {
+    min-height: 100px;
+    gap: 0.5rem;
+  }
+
+  .carta {
+    width: 64px;
+    height: 92px;
+  }
+
+  .carta .palo {
+    font-size: 1.7rem;
+  }
+
+  .controles {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controles button {
+    width: 100%;
+  }
+
+  .modal-caja {
+    padding: 1.5rem 1.2rem 1.4rem;
+  }
+
+  .modal-caja h2 {
+    font-size: 1.45rem;
+    letter-spacing: 0.12em;
+  }
+}
